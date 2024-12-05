@@ -1,0 +1,8 @@
+python-dotenv
+uagents
+openai
+flask
+psycopg2-binary
+sqlalchemy
+pymongo
+gunicorn

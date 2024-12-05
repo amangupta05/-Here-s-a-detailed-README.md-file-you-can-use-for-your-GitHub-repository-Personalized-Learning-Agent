@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Learning Agent</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Welcome to the Personalized Learning Agent</h1>
+    <form id="query-form">
+        <input type="hidden" name="user_id" value="1"> <!-- Replace with dynamic user ID -->
+        <label for="query">Ask your question:</label>
+        <input type="text" id="query" name="query" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response"></div>
+    <script>
+        const form = document.getElementById('query-form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch('/ask', {
+                method: 'POST',
+                body: formData,
+            });
+            const data = await response.json();
+            document.getElementById('response').textContent = data.response;
+        });
+    </script>
+</body>
+</html>
