@@ -135,8 +135,7 @@ Processes user input, queries GPT-4, personalizes responses, and updates the dat
 
 ---
 
-## **Demo**
-Include screenshots or links to a recorded demo video.
+
 
 ---
 
